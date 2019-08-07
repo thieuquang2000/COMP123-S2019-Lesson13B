@@ -40,7 +40,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,6 +77,13 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BackButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.SourceLabel = new System.Windows.Forms.Label();
+            this.SourceTextBox = new System.Windows.Forms.TextBox();
+            this.TargetLabel = new System.Windows.Forms.Label();
+            this.TargetTextBox = new System.Windows.Forms.TextBox();
             this.MainTabControl.SuspendLayout();
             this.StartTabPage.SuspendLayout();
             this.MainTabPage.SuspendLayout();
@@ -89,8 +95,8 @@
             // 
             // MainTabControl
             // 
-            this.MainTabControl.Controls.Add(this.StartTabPage);
             this.MainTabControl.Controls.Add(this.MainTabPage);
+            this.MainTabControl.Controls.Add(this.StartTabPage);
             this.MainTabControl.Controls.Add(this.EndTabPage);
             this.MainTabControl.Location = new System.Drawing.Point(12, 64);
             this.MainTabControl.Name = "MainTabControl";
@@ -111,17 +117,23 @@
             // 
             // MainTabPage
             // 
-            this.MainTabPage.Controls.Add(this.label1);
+            this.MainTabPage.Controls.Add(this.TargetTextBox);
+            this.MainTabPage.Controls.Add(this.TargetLabel);
+            this.MainTabPage.Controls.Add(this.SourceTextBox);
+            this.MainTabPage.Controls.Add(this.SourceLabel);
             this.MainTabPage.Location = new System.Drawing.Point(4, 40);
             this.MainTabPage.Name = "MainTabPage";
             this.MainTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTabPage.Size = new System.Drawing.Size(776, 326);
+            this.MainTabPage.Size = new System.Drawing.Size(764, 326);
             this.MainTabPage.TabIndex = 1;
             this.MainTabPage.Text = "Main";
             this.MainTabPage.UseVisualStyleBackColor = true;
             // 
             // EndTabPage
             // 
+            this.EndTabPage.Controls.Add(this.textBox3);
+            this.EndTabPage.Controls.Add(this.textBox2);
+            this.EndTabPage.Controls.Add(this.textBox1);
             this.EndTabPage.Controls.Add(this.label4);
             this.EndTabPage.Controls.Add(this.label3);
             this.EndTabPage.Controls.Add(this.label2);
@@ -207,15 +219,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 164);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(6, 46);
@@ -226,7 +229,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(6, 94);
+            this.label3.Location = new System.Drawing.Point(6, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 37);
             this.label3.TabIndex = 1;
@@ -234,7 +237,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(6, 145);
+            this.label4.Location = new System.Drawing.Point(6, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 37);
             this.label4.TabIndex = 2;
@@ -511,6 +514,63 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(100, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 38);
+            this.textBox1.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(100, 158);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(224, 38);
+            this.textBox2.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(100, 100);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(224, 38);
+            this.textBox3.TabIndex = 5;
+            // 
+            // SourceLabel
+            // 
+            this.SourceLabel.AutoSize = true;
+            this.SourceLabel.Location = new System.Drawing.Point(7, 28);
+            this.SourceLabel.Name = "SourceLabel";
+            this.SourceLabel.Size = new System.Drawing.Size(100, 31);
+            this.SourceLabel.TabIndex = 0;
+            this.SourceLabel.Text = "Source";
+            // 
+            // SourceTextBox
+            // 
+            this.SourceTextBox.Location = new System.Drawing.Point(6, 62);
+            this.SourceTextBox.Name = "SourceTextBox";
+            this.SourceTextBox.Size = new System.Drawing.Size(104, 38);
+            this.SourceTextBox.TabIndex = 1;
+            this.SourceTextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SourceTextBox_MouseDown);
+            // 
+            // TargetLabel
+            // 
+            this.TargetLabel.AutoSize = true;
+            this.TargetLabel.Location = new System.Drawing.Point(629, 28);
+            this.TargetLabel.Name = "TargetLabel";
+            this.TargetLabel.Size = new System.Drawing.Size(93, 31);
+            this.TargetLabel.TabIndex = 0;
+            this.TargetLabel.Text = "Target";
+            // 
+            // TargetTextBox
+            // 
+            this.TargetTextBox.AllowDrop = true;
+            this.TargetTextBox.Location = new System.Drawing.Point(628, 62);
+            this.TargetTextBox.Name = "TargetTextBox";
+            this.TargetTextBox.Size = new System.Drawing.Size(104, 38);
+            this.TargetTextBox.TabIndex = 1;
+            this.TargetTextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.TargetTextBox_DragDrop);
+            this.TargetTextBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.TargetTextBox_DragEnter);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -534,6 +594,7 @@
             this.MainTabPage.ResumeLayout(false);
             this.MainTabPage.PerformLayout();
             this.EndTabPage.ResumeLayout(false);
+            this.EndTabPage.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -556,7 +617,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage MainTabPage;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage EndTabPage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -595,5 +655,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.TextBox SourceTextBox;
+        private System.Windows.Forms.Label SourceLabel;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TargetTextBox;
+        private System.Windows.Forms.Label TargetLabel;
     }
 }
